@@ -206,6 +206,66 @@ label {
     margin-bottom: 24px;
 }
 
+/* COMPACT MODE: One user per line, compact style */
+.compact-user-list {
+    display: block !important;
+}
+
+.compact-user {
+    background-color: var(--background-tertiary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-bottom: 8px;
+    min-height: 36px;
+    font-size: 0.97em;
+}
+
+.compact-user .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.compact-user .user-name-id {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.compact-user .user-stats {
+    color: var(--text-secondary);
+    font-size: 0.94em;
+}
+
+.compact-user .user-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.compact-user .user-actions button {
+    padding: 4px;
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+.compact-user .user-actions img {
+    width: 1.35em;
+    height: 1.35em;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.compact-user .user-actions button:hover img {
+    opacity: 1;
+}
+
 .user {
     background-color: var(--background-tertiary);
     padding: 16px;
@@ -487,67 +547,4 @@ input:checked + .slider:before {
 
 .hidden {
     display: none !important;
-
 }
-
-.compact-user-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.compact-user {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 4px 10px;
-    font-size: 0.96em;
-    background: #232323;
-    border-radius: 5px;
-    margin: 0;
-    min-height: 30px;
-}
-
-.compact-user .user-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex: 1;
-    gap: 14px;
-}
-
-.compact-user .user-name-id {
-    font-weight: bold;
-    color: var(--text-primary);
-    margin-right: 8px;
-}
-
-.compact-user .user-stats {
-    color: var(--text-primary);
-    font-weight: normal;
-    margin-right: 8px;
-}
-
-.compact-user .user-actions {
-    display: flex;
-    gap: 6px;
-}
-
-.compact-user .user-actions button {
-    background: none;
-    border: none;
-    padding: 2px 4px;
-    cursor: pointer;
-}
-
-.compact-user .user-actions img {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-}
-
-.compact-user .user-info span:first-of-type {
-    font-weight: bold;
-    color: var(--text-primary);
-}
-
