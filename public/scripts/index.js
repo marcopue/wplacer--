@@ -31,6 +31,7 @@ const ty = $("ty");
 const px = $("px");
 const py = $("py");
 const userSelectList = $("userSelectList");
+const compactUserList = $("compactUserList");
 const selectAllUsers = $("selectAllUsers");
 const canBuyMaxCharges = $("canBuyMaxCharges");
 const canBuyCharges = $("canBuyCharges");
@@ -444,12 +445,13 @@ openManageUsers.addEventListener("click", () => {
     userForm.reset();
     totalCharges.textContent = "?";
     totalMaxCharges.textContent = "?";
+    userList.classList.toggle('compact-user-list', compactUserList.checked);
     loadUsers(users => {
         const userCount = Object.keys(users).length;
         manageUsersTitle.textContent = `Existing Users (${userCount})`;
         for (const id of Object.keys(users)) {
             const user = document.createElement('div');
-            user.className = 'user';
+            user.className = compactUserList.checked ? 'compact-user' : 'user';
             user.id = `user-${id}`;
             const expirationDate = users[id].expirationDate;
             const expirationStr = expirationDate ? new Date(expirationDate * 1000).toLocaleString() : 'N/A';
@@ -714,6 +716,7 @@ openSettings.addEventListener("click", async () => {
         const response = await axios.get('/settings');
         const currentSettings = response.data;
         drawingModeSelect.value = currentSettings.drawingMethod;
+        compactUserList.checked = currentSettings.compactUserList || false;
         turnstileNotifications.checked = currentSettings.turnstileNotifications;
         outlineMode.checked = currentSettings.outlineMode;
         accountCooldown.value = currentSettings.accountCooldown / 1000;
@@ -740,6 +743,11 @@ const saveSetting = async (setting) => {
 drawingModeSelect.addEventListener('change', () => saveSetting({ drawingMethod: drawingModeSelect.value }));
 turnstileNotifications.addEventListener('change', () => saveSetting({ turnstileNotifications: turnstileNotifications.checked }));
 outlineMode.addEventListener('change', () => saveSetting({ outlineMode: outlineMode.checked }));
+
+compactUserList.addEventListener('change', () => {
+    saveSetting({ compactUserList: compactUserList.checked });
+    renderUserList();
+});
 
 accountCooldown.addEventListener('change', () => {
     const value = parseInt(accountCooldown.value, 10) * 1000;
