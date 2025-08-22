@@ -463,16 +463,13 @@ openManageUsers.addEventListener("click", () => {
             
             if (compactUserList.checked) {
                 user.innerHTML = `
-                    <div class="user-info">
-                        <span class="user-name-id"><b>${users[id].name}</b> <span>(#${id})</span></span>
-                        <span class="user-stats">
-                            Charges: <b>?</b>/<b>?</b> | Level <b>?</b> | Expires: <b>${expirationStr}</b>
-                        </span>
-                    </div>
-                    <div class="user-actions">
+                    <span class="user-name-id"><b>${users[id].name}</b> <span>(#${id})</span></span>
+                    <span class="user-stats">Charges: <b>?</b>/<b>?</b> | Level <b>?</b> | Expires: <b>${expirationStr}</b></span>
+                    <span class="user-actions">
                         <button class="delete-btn" title="Delete User"><img src="icons/remove.svg"></button>
                         <button class="info-btn" title="Get User Info"><img src="icons/code.svg"></button>
-                    </div>`;
+                    </span>
+                `;
             } else {
             
             user.innerHTML = `
