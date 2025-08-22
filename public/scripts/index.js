@@ -31,7 +31,6 @@ const ty = $("ty");
 const px = $("px");
 const py = $("py");
 const userSelectList = $("userSelectList");
-const compactUserList = $("compactUserList");
 const selectAllUsers = $("selectAllUsers");
 const canBuyMaxCharges = $("canBuyMaxCharges");
 const canBuyCharges = $("canBuyCharges");
@@ -58,6 +57,7 @@ const messageBoxContent = $("messageBoxContent");
 const messageBoxConfirm = $("messageBoxConfirm");
 const messageBoxCancel = $("messageBoxCancel");
 const usePaidColors = $("usePaidColors");
+const compactUserList = document.getElementById('compactUserList');
 
 // Message Box
 let confirmCallback = null;
@@ -483,7 +483,8 @@ openManageUsers.addEventListener("click", () => {
                     <button class="delete-btn" title="Delete User"><img src="icons/remove.svg"></button>
                     <button class="info-btn" title="Get User Info"><img src="icons/code.svg"></button>
                 </div>`;
-
+            }
+            
             user.querySelector('.delete-btn').addEventListener("click", () => {
                 showConfirmation(
                     "Delete User",
