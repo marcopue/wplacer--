@@ -206,22 +206,22 @@ label {
     margin-bottom: 24px;
 }
 
-/* COMPACT MODE: One user per line, compact style */
+/* COMPACT MODE: One user per line, ultra compact and vertically aligned */
 .compact-user-list {
     display: block !important;
 }
 
 .compact-user {
     background-color: var(--background-tertiary);
-    padding: 4px 10px;
-    border-radius: 8px;
+    padding: 1px 6px;
+    border-radius: 6px;
     border: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4px;
-    min-height: 28px;
-    font-size: 0.95em;
+    margin-bottom: 1.5px;
+    min-height: 18px;
+    font-size: 0.91em;
     line-height: 1;
 }
 
@@ -229,7 +229,7 @@ label {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 7px;
     padding: 0;
     margin: 0;
 }
@@ -241,46 +241,45 @@ label {
     padding: 0;
     display: flex;
     align-items: center;
+    /* Ensure contents are on same baseline */
 }
 
 .compact-user .user-stats {
     color: var(--text-secondary);
-    font-size: 0.93em;
+    font-size: 0.91em;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 7px;
 }
 
 .compact-user .user-actions {
     display: flex;
     flex-direction: row;
-    gap: 6px;
+    gap: 3px;
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
 .compact-user .user-actions button {
-    padding: 2px;
+    padding: 0;
     background: none;
     border: none;
     margin: 0;
+    line-height: 1;
 }
 
 .compact-user .user-actions img {
-    width: 16px;
-    height: 16px;
-    opacity: 0.7;
+    width: 13px;
+    height: 13px;
+    opacity: 0.85;
     transition: opacity 0.2s ease;
     vertical-align: middle;
 }
 
-.compact-user .user-actions button:hover img {
-    opacity: 1;
-}
-
+/* Default user card (non-compact) */
 .user {
     background-color: var(--background-tertiary);
     padding: 16px;
