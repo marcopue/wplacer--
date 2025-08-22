@@ -217,7 +217,6 @@ label {
     border-radius: 6px;
     border: 1px solid var(--border-color);
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5px;
@@ -226,12 +225,13 @@ label {
     line-height: 1;
 }
 
-.compact-user > span {
+.compact-user .user-info {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 7px;
-    font-size: inherit;
-    line-height: inherit;
+    padding: 0;
+    margin: 0;
 }
 
 .compact-user .user-name-id {
@@ -239,24 +239,28 @@ label {
     color: var(--text-primary);
     margin: 0;
     padding: 0;
-    gap: 4px;
-    font-size: inherit;
-    line-height: inherit;
+    display: flex;
+    align-items: center;
+    /* Ensure contents are on same baseline */
 }
 
 .compact-user .user-stats {
     color: var(--text-secondary);
-    font-size: inherit;
+    font-size: 0.91em;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
     gap: 7px;
-    line-height: inherit;
 }
 
 .compact-user .user-actions {
+    display: flex;
+    flex-direction: row;
     gap: 3px;
-    font-size: inherit;
-    line-height: inherit;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .compact-user .user-actions button {
@@ -265,8 +269,6 @@ label {
     border: none;
     margin: 0;
     line-height: 1;
-    display: flex;
-    align-items: center;
 }
 
 .compact-user .user-actions img {
