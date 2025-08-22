@@ -213,53 +213,68 @@ label {
 
 .compact-user {
     background-color: var(--background-tertiary);
-    padding: 8px 16px;
+    padding: 4px 10px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    margin-bottom: 8px;
-    min-height: 36px;
-    font-size: 0.97em;
+    margin-bottom: 4px;
+    min-height: 28px;
+    font-size: 0.95em;
+    line-height: 1;
 }
 
 .compact-user .user-info {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
 }
 
 .compact-user .user-name-id {
     font-weight: 700;
     color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .compact-user .user-stats {
     color: var(--text-secondary);
-    font-size: 0.94em;
+    font-size: 0.93em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .compact-user .user-actions {
     display: flex;
-    gap: 8px;
+    flex-direction: row;
+    gap: 6px;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .compact-user .user-actions button {
-    padding: 4px;
+    padding: 2px;
     background: none;
     border: none;
     margin: 0;
 }
 
 .compact-user .user-actions img {
-    width: 1.35em;
-    height: 1.35em;
-    opacity: 0.6;
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
     transition: opacity 0.2s ease;
+    vertical-align: middle;
 }
 
 .compact-user .user-actions button:hover img {
