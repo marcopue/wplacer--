@@ -493,23 +493,61 @@ input:checked + .slider:before {
 .compact-user-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .compact-user {
-    padding: 8px;
-    font-size: 0.95em;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 0.96em;
+    background: #232323;
+    border-radius: 5px;
     margin: 0;
+    min-height: 30px;
 }
 
-.compact-user .user-info, 
+.compact-user .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    gap: 14px;
+}
+
+.compact-user .user-name-id {
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-right: 8px;
+}
+
+.compact-user .user-stats {
+    color: var(--text-primary);
+    font-weight: normal;
+    margin-right: 8px;
+}
+
 .compact-user .user-actions {
-    gap: 4px;
-    font-size: inherit;
+    display: flex;
+    gap: 6px;
+}
+
+.compact-user .user-actions button {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.compact-user .user-actions img {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 
 .compact-user .user-info span:first-of-type {
     font-weight: bold;
     color: var(--text-primary);
 }
+
