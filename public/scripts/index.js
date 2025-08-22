@@ -454,7 +454,12 @@ openManageUsers.addEventListener("click", () => {
             user.className = compactUserList.checked ? 'compact-user' : 'user';
             user.id = `user-${id}`;
             const expirationDate = users[id].expirationDate;
-            const expirationStr = expirationDate ? new Date(expirationDate * 1000).toLocaleString() : 'N/A';
+            const expirationStr = expirationDate
+                ? (() => {
+                    const d = new Date(expirationDate * 1000);
+                    return d.toLocaleDateString(undefined, { day: '2-digit', month: '2-digit' });
+                  })()
+                : 'N/A';
             
             if (compactUserList.checked) {
                 user.innerHTML = `
